@@ -16,7 +16,7 @@ all: fmt test build
 .PHONY: build
 build:
 	@echo "Building $(BINARY_NAME)..."
-	@$(GO) build -o $(BINARY_NAME) $(LDFLAGS)
+	@$(GO) build -o ./build/$(BINARY_NAME) $(LDFLAGS)
 
 # Run tests
 .PHONY: test
@@ -62,7 +62,8 @@ dist: clean
 .PHONY: run
 run: build
 	@echo "Running $(BINARY_NAME)..."
-	@./$(BINARY_NAME)
+	@mkdir -p ./build
+	@./build/$(BINARY_NAME)
 
 # Help
 .PHONY: help

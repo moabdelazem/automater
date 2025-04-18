@@ -25,3 +25,9 @@ go.work
 .idea/
 *.swp
 *~
+
+# Ignore dist directory
+dist/
+
+# Ignore build artifacts
+build/
